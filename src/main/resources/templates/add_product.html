@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" >
+    <title>Document</title>
+
+    <link rel="stylesheet" th:href="@{add_product.css}" />
+</head>
+<body>
+<header>
+    <a th:href="@{/l}" class="logo">FOOD <span id="g">Shop</span>.</a>
+
+    <ul>
+        <li><a th:href="@{/l}">Home</a></li>
+        <li><a  th:href="@{/p}">add Product</a></li>
+        <li><a th:href="@{/k}">Show Product</a></li>
+        <li><a th:href="@{/Cart}">Cart</a></li>
+    </ul>
+</header>
+<p></p>
+<img th:src="@{'/images/DFF.jpg'}" alt="" srcset="">
+
+<div class="contaier">
+
+    <div> <form id="form" th:action="@{/store}" method="post" enctype="multipart/form-data">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" class="text" th:value="${name}"><br><br>
+
+        <label for="name">price:</label>
+        <input type="text"  name="price" class="text" th:value="${price}"><br><br>
+        <label for="name">image:</label>
+        <input type="file"  name="imageFile" class="text" th:value="${imageFile}" ><br><br>
+
+
+
+        <input type="submit" value="Submit" id="submitBtn">
+    </form> </div>
+</div>
+
+</body>
+</html>

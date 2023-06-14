@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" th:href="@{product.css}" />
+
+</head>
+<body>
+<header>
+  <a th:href="@{/l}" class="logo">FOOD <span id="g">Shop</span>.</a>
+
+  <ul>
+    <li><a th:href="@{/l}">Home</a></li>
+    <li><a  th:href="@{/p}">add Product</a></li>
+    <li><a th:href="@{/k}">Show Product</a></li>
+    <li><a th:href="@{/Cart}">Cart</a></li>
+  </ul>
+</header>
+<p id="kkk"></p>
+<div class="jik">
+<div class="food-container" th:each="product : ${listproduct}">
+  <div class="food-item">
+
+
+    <img th:src="@{'/images/' + ${product.image} + '.png'}" alt="..." />
+
+
+    <h3 class="food-name" th:text="${product.name}"></h3>
+    <p class="food-description" th:text="${product.price}"></p>
+    <form th:action="@{/addToCart/{id}(id=${product.id})}" th:method="get" >
+      <input type="submit" value="Add to Cart" id="submitBtn">
+    </form>
+  </div>
+  </div>
+</div>
+</body>
+</html>

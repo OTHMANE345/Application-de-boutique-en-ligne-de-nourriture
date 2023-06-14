@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home_css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a th:href="@{/l}" class="logo">FOOD <span id="g">Shop</span>.</a>
+
+        <ul>
+            <li><a th:href="@{/l}">Home</a></li>
+            <li><a  th:href="@{/p}">add Product</a></li>
+            <li><a th:href="@{/k}">Show Product</a></li>
+            <li><a th:href="@{/Cart}">Cart</a></li>
+        </ul>
+    </header>
+    <section class="home">
+        <div class="text">
+          <span class="greeting">Hello, I'm</span>
+          <h1 class="name">OTHMANE</h1>
+          <h2 class="title">FOOD SHOP</h2>
+          <p class="description"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi debitis ducimus tempora maxime, odit saepe dignissimos excepturi voluptatem magnam et quidem rerum vero nobis libero obcaecati asperiores id error esse!</p>
+          <a href="contact.html" class="btn">Contact me</a>
+          <div class="contact-links">
+            
+            <a href="contact.html" class="email-link">
+              <i class="fa fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+        <img th:src="@{'/images/HJJH.jpg'}" alt="" srcset="">
+
+      </section>
+    
+</body>
+</html>
